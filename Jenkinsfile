@@ -2,6 +2,10 @@
 pipeline {
     agent any
 
+    environment {
+        TRIVY = 'C:\\Users\\K.Premchand\\Downloads\\trivy_0.76.2_windows-64bit\\trivy.exe'
+    }
+
     stages {
         stage('Git Checkout') {
             steps {
@@ -17,19 +21,19 @@ pipeline {
 
         stage('Trivy Filesystem Scan') {
             steps {
-                bat 'trivy.exe fs --severity HIGH,CRITICAL .'
+                bat '"%TRIVY%" fs --severity HIGH,CRITICAL .'
             }
         }
 
         stage('Trivy Docker Image Scan') {
             steps {
-                bat 'trivy.exe image --severity HIGH,CRITICAL trivy-security-demo:v1'
+                bat '"%TRIVY%" image --severity HIGH,CRITICAL trivy-security-demo:v1'
             }
         }
 
         stage('Trivy Kubernetes Scan') {
             steps {
-                bat 'trivy.exe config --severity HIGH,CRITICAL k8s'
+                bat '"%TRIVY%" config --severity HIGH,CRITICAL k8s'
             }
         }
 

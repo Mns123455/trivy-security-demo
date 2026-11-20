@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      * {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        text-align: center;
+      }
+      .group-header th {
+        font-size: 200%;
+      }
+      .sub-header th {
+        font-size: 150%;
+      }
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        white-space: nowrap;
+        padding: .3em;
+      }
+      table {
+        margin: 0 auto;
+      }
+      .severity {
+        text-align: center;
+        font-weight: bold;
+        color: #fafafa;
+      }
+      .severity-LOW .severity { background-color: #5fbb31; }
+      .severity-MEDIUM .severity { background-color: #e9c600; }
+      .severity-HIGH .severity { background-color: #ff8800; }
+      .severity-CRITICAL .severity { background-color: #e40000; }
+      .severity-UNKNOWN .severity { background-color: #747474; }
+      .severity-LOW { background-color: #5fbb3160; }
+      .severity-MEDIUM { background-color: #e9c60060; }
+      .severity-HIGH { background-color: #ff880060; }
+      .severity-CRITICAL { background-color: #e4000060; }
+      .severity-UNKNOWN { background-color: #74747460; }
+      table tr td:first-of-type {
+        font-weight: bold;
+      }
+      .links a,
+      .links[data-more-links=on] a {
+        display: block;
+      }
+      .links[data-more-links=off] a:nth-of-type(1n+5) {
+        display: none;
+      }
+      a.toggle-more-links { cursor: pointer; }
+    </style>
+    <title>trivy-security-demo:v1 (alpine 3.24.4) - Trivy Report - 2026-11-20 15:00:26.7317453 +0530 IST m=+2.095187001 </title>
+    <script>
+      window.onload = function() {
+        document.querySelectorAll('td.links').forEach(function(linkCell) {
+          var links = [].concat.apply([], linkCell.querySelectorAll('a'));
+          [].sort.apply(links, function(a, b) {
+            return a.href > b.href ? 1 : -1;
+          });
+          links.forEach(function(link, idx) {
+            if (links.length > 3 && 3 === idx) {
+              var toggleLink = document.createElement('a');
+              toggleLink.innerText = "Toggle more links";
+              toggleLink.href = "#toggleMore";
+              toggleLink.setAttribute("class", "toggle-more-links");
+              linkCell.appendChild(toggleLink);
+            }
+            linkCell.appendChild(link);
+          });
+        });
+        document.querySelectorAll('a.toggle-more-links').forEach(function(toggleLink) {
+          toggleLink.onclick = function() {
+            var expanded = toggleLink.parentElement.getAttribute("data-more-links");
+            toggleLink.parentElement.setAttribute("data-more-links", "on" === expanded ? "off" : "on");
+            return false;
+          };
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <h1>trivy-security-demo:v1 (alpine 3.24.4) - Trivy Report - 2026-11-20 15:00:26.7317453 +0530 IST m=+2.095187001</h1>
+    <table>
+      <tr class="group-header"><th colspan="6">alpine</th></tr>
+      <tr class="sub-header">
+        <th>Package</th>
+        <th>Vulnerability ID</th>
+        <th>Severity</th>
+        <th>Installed Version</th>
+        <th>Fixed Version</th>
+        <th>Links</th>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">libcrypto3</td>
+        <td>CVE-2026-107496</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">3.5.9-r0</td>
+        <td>3.5.9-r1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/openssl/openssl/commit/36e15b618decdff1b116eead6747718e6e729ad2">https://github.com/openssl/openssl/commit/36e15b618decdff1b116eead6747718e6e729ad2</a>
+          <a href="https://github.com/openssl/openssl/commit/a0051cfe699bf5a047bc1c4faef65f80f7987366">https://github.com/openssl/openssl/commit/a0051cfe699bf5a047bc1c4faef65f80f7987366</a>
+          <a href="https://github.com/openssl/openssl/commit/a8531368ddb1f86d2a2782a8b693926bb67b59e7">https://github.com/openssl/openssl/commit/a8531368ddb1f86d2a2782a8b693926bb67b59e7</a>
+          <a href="https://openssl-library.org/news/secadv/20261110.txt">https://openssl-library.org/news/secadv/20261110.txt</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-107496">https://www.cve.org/CVERecord?id=CVE-2026-107496</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">libcrypto3</td>
+        <td>CVE-2026-88822</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">3.5.9-r0</td>
+        <td>3.5.9-r1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/openssl/openssl/commit/1a73dc590cbad62d6f0329ea4779eadaa8d8fd75">https://github.com/openssl/openssl/commit/1a73dc590cbad62d6f0329ea4779eadaa8d8fd75</a>
+          <a href="https://github.com/openssl/openssl/commit/7b4f5344aa0401e7b777640050b5257ed2a70e88">https://github.com/openssl/openssl/commit/7b4f5344aa0401e7b777640050b5257ed2a70e88</a>
+          <a href="https://github.com/openssl/openssl/commit/911eee8eb7550b95a206f1ad8cbdb986098982f3">https://github.com/openssl/openssl/commit/911eee8eb7550b95a206f1ad8cbdb986098982f3</a>
+          <a href="https://openssl-library.org/news/secadv/20261110.txt">https://openssl-library.org/news/secadv/20261110.txt</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-88822">https://www.cve.org/CVERecord?id=CVE-2026-88822</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">libcrypto3</td>
+        <td>CVE-2026-88823</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">3.5.9-r0</td>
+        <td>3.5.9-r1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/openssl/openssl/commit/159e1de0c448d7b9f09ad768c8e141def4aa1eb4">https://github.com/openssl/openssl/commit/159e1de0c448d7b9f09ad768c8e141def4aa1eb4</a>
+          <a href="https://github.com/openssl/openssl/commit/2f5fc833ff9b5bfe00b32f8b5c74f73c5773c682">https://github.com/openssl/openssl/commit/2f5fc833ff9b5bfe00b32f8b5c74f73c5773c682</a>
+          <a href="https://github.com/openssl/openssl/commit/6747b1a278816dd7db46438040a70b0b5e5e0a90">https://github.com/openssl/openssl/commit/6747b1a278816dd7db46438040a70b0b5e5e0a90</a>
+          <a href="https://openssl-library.org/news/secadv/20261110.txt">https://openssl-library.org/news/secadv/20261110.txt</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-88823">https://www.cve.org/CVERecord?id=CVE-2026-88823</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">libcrypto3</td>
+        <td>CVE-2026-95691</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">3.5.9-r0</td>
+        <td>3.5.9-r1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/openssl/openssl/commit/dd90ceb99a3c2ddba336bb4a00be9ebabd84c2a1">https://github.com/openssl/openssl/commit/dd90ceb99a3c2ddba336bb4a00be9ebabd84c2a1</a>
+          <a href="https://github.com/openssl/openssl/commit/ec9d4de9d03989b29db5a3d7efdb4c285deaf386">https://github.com/openssl/openssl/commit/ec9d4de9d03989b29db5a3d7efdb4c285deaf386</a>
+          <a href="https://github.com/openssl/openssl/commit/f6244675833e097c2429a40d1b206d95385bd42f">https://github.com/openssl/openssl/commit/f6244675833e097c2429a40d1b206d95385bd42f</a>
+          <a href="https://openssl-library.org/news/secadv/20261110.txt">https://openssl-library.org/news/secadv/20261110.txt</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-95691">https://www.cve.org/CVERecord?id=CVE-2026-95691</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">libcrypto3</td>
+        <td>CVE-2026-95692</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">3.5.9-r0</td>
+        <td>3.5.9-r1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/openssl/openssl/commit/257a3427aa0ef8d9dd2ef5b3e2d1c021a221b116">https://github.com/openssl/openssl/commit/257a3427aa0ef8d9dd2ef5b3e2d1c021a221b116</a>
+          <a href="https://github.com/openssl/openssl/commit/510872388f5d145cf870868b3d288a23822cb776">https://github.com/openssl/openssl/commit/510872388f5d145cf870868b3d288a23822cb776</a>
+          <a href="https://github.com/openssl/openssl/commit/70a47ac78b6f3be1b22fb1551bd0bfcff4f29613">https://github.com/openssl/openssl/commit/70a47ac78b6f3be1b22fb1551bd0bfcff4f29613</a>
+          <a href="https://openssl-library.org/news/secadv/20261110.txt">https://openssl-library.org/news/secadv/20261110.txt</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-95692">https://www.cve.org/CVERecord?id=CVE-2026-95692</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">libssl3</td>
+        <td>CVE-2026-107496</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">3.5.9-r0</td>
+        <td>3.5.9-r1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/openssl/openssl/commit/36e15b618decdff1b116eead6747718e6e729ad2">https://github.com/openssl/openssl/commit/36e15b618decdff1b116eead6747718e6e729ad2</a>
+          <a href="https://github.com/openssl/openssl/commit/a0051cfe699bf5a047bc1c4faef65f80f7987366">https://github.com/openssl/openssl/commit/a0051cfe699bf5a047bc1c4faef65f80f7987366</a>
+          <a href="https://github.com/openssl/openssl/commit/a8531368ddb1f86d2a2782a8b693926bb67b59e7">https://github.com/openssl/openssl/commit/a8531368ddb1f86d2a2782a8b693926bb67b59e7</a>
+          <a href="https://openssl-library.org/news/secadv/20261110.txt">https://openssl-library.org/news/secadv/20261110.txt</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-107496">https://www.cve.org/CVERecord?id=CVE-2026-107496</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">libssl3</td>
+        <td>CVE-2026-88822</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">3.5.9-r0</td>
+        <td>3.5.9-r1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/openssl/openssl/commit/1a73dc590cbad62d6f0329ea4779eadaa8d8fd75">https://github.com/openssl/openssl/commit/1a73dc590cbad62d6f0329ea4779eadaa8d8fd75</a>
+          <a href="https://github.com/openssl/openssl/commit/7b4f5344aa0401e7b777640050b5257ed2a70e88">https://github.com/openssl/openssl/commit/7b4f5344aa0401e7b777640050b5257ed2a70e88</a>
+          <a href="https://github.com/openssl/openssl/commit/911eee8eb7550b95a206f1ad8cbdb986098982f3">https://github.com/openssl/openssl/commit/911eee8eb7550b95a206f1ad8cbdb986098982f3</a>
+          <a href="https://openssl-library.org/news/secadv/20261110.txt">https://openssl-library.org/news/secadv/20261110.txt</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-88822">https://www.cve.org/CVERecord?id=CVE-2026-88822</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">libssl3</td>
+        <td>CVE-2026-88823</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">3.5.9-r0</td>
+        <td>3.5.9-r1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/openssl/openssl/commit/159e1de0c448d7b9f09ad768c8e141def4aa1eb4">https://github.com/openssl/openssl/commit/159e1de0c448d7b9f09ad768c8e141def4aa1eb4</a>
+          <a href="https://github.com/openssl/openssl/commit/2f5fc833ff9b5bfe00b32f8b5c74f73c5773c682">https://github.com/openssl/openssl/commit/2f5fc833ff9b5bfe00b32f8b5c74f73c5773c682</a>
+          <a href="https://github.com/openssl/openssl/commit/6747b1a278816dd7db46438040a70b0b5e5e0a90">https://github.com/openssl/openssl/commit/6747b1a278816dd7db46438040a70b0b5e5e0a90</a>
+          <a href="https://openssl-library.org/news/secadv/20261110.txt">https://openssl-library.org/news/secadv/20261110.txt</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-88823">https://www.cve.org/CVERecord?id=CVE-2026-88823</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">libssl3</td>
+        <td>CVE-2026-95691</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">3.5.9-r0</td>
+        <td>3.5.9-r1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/openssl/openssl/commit/dd90ceb99a3c2ddba336bb4a00be9ebabd84c2a1">https://github.com/openssl/openssl/commit/dd90ceb99a3c2ddba336bb4a00be9ebabd84c2a1</a>
+          <a href="https://github.com/openssl/openssl/commit/ec9d4de9d03989b29db5a3d7efdb4c285deaf386">https://github.com/openssl/openssl/commit/ec9d4de9d03989b29db5a3d7efdb4c285deaf386</a>
+          <a href="https://github.com/openssl/openssl/commit/f6244675833e097c2429a40d1b206d95385bd42f">https://github.com/openssl/openssl/commit/f6244675833e097c2429a40d1b206d95385bd42f</a>
+          <a href="https://openssl-library.org/news/secadv/20261110.txt">https://openssl-library.org/news/secadv/20261110.txt</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-95691">https://www.cve.org/CVERecord?id=CVE-2026-95691</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">libssl3</td>
+        <td>CVE-2026-95692</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">3.5.9-r0</td>
+        <td>3.5.9-r1</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/openssl/openssl/commit/257a3427aa0ef8d9dd2ef5b3e2d1c021a221b116">https://github.com/openssl/openssl/commit/257a3427aa0ef8d9dd2ef5b3e2d1c021a221b116</a>
+          <a href="https://github.com/openssl/openssl/commit/510872388f5d145cf870868b3d288a23822cb776">https://github.com/openssl/openssl/commit/510872388f5d145cf870868b3d288a23822cb776</a>
+          <a href="https://github.com/openssl/openssl/commit/70a47ac78b6f3be1b22fb1551bd0bfcff4f29613">https://github.com/openssl/openssl/commit/70a47ac78b6f3be1b22fb1551bd0bfcff4f29613</a>
+          <a href="https://openssl-library.org/news/secadv/20261110.txt">https://openssl-library.org/news/secadv/20261110.txt</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-95692">https://www.cve.org/CVERecord?id=CVE-2026-95692</a>
+        </td>
+      </tr>
+      <tr class="severity-MEDIUM">
+        <td class="pkg-name">zlib</td>
+        <td>CVE-2026-4738</td>
+        <td class="severity">MEDIUM</td>
+        <td class="pkg-version">1.3.2-r1</td>
+        <td>1.4-r0</td>
+        <td class="links" data-more-links="off">
+          <a href="https://github.com/OSGeo/gdal/pull/12244">https://github.com/OSGeo/gdal/pull/12244</a>
+          <a href="https://github.com/advisories/GHSA-hp6p-5qh5-w9fj">https://github.com/advisories/GHSA-hp6p-5qh5-w9fj</a>
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2026-4738">https://nvd.nist.gov/vuln/detail/CVE-2026-4738</a>
+          <a href="https://www.cve.org/CVERecord?id=CVE-2026-4738">https://www.cve.org/CVERecord?id=CVE-2026-4738</a>
+        </td>
+      </tr>
+      <tr><th colspan="6">No Misconfigurations found</th></tr>
+    </table>
+  </body>
+</html>
